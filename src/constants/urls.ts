@@ -1,5 +1,5 @@
 export const URLS = {
-  dashboard: 'offline/Events',
+  dashboard: 'Events',
   livefeed: 'offline/livefeed',
   spaces: 'offline/dashboard',
   liveRecordings: 'offline/liverecordings',

@@ -70,8 +70,8 @@ const SidebarMenuItem = ({
             >
               <div
                 className={`${
-                  isActive && 'bg-secondary-color'
-                } flex items-center  justify-center rounded-2xl bg-primary-color duration-300 ease-in-out group-hover:bg-secondary-color md:h-[31px] md:w-[31px] xl:h-[60px] xl:w-[70px]`}
+                  isActive ? 'bg-secondary-color':"bg-sixth-color"
+                } flex items-center  justify-center rounded-2xl  duration-300 ease-in-out group-hover:bg-secondary-color  xl:h-[60px] xl:w-[70px]`}
               >
                 <Image
                   width={0}

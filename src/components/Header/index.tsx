@@ -95,23 +95,23 @@ export default function Header() {
               {heading}
             </h3>
           </div>
-          <div className='flex justify-center items-center mt-[-42px]'>
-            <div className='w-[9vw] relative'>
+          <div className='flex justify-center items-center mt-[-42px] mr-44'>
+            <div className='w-[173px] relative cursor-pointer'>
             <CurvedButton  backgroundColor="bg-tertiary-color"
             height="min-[400px]:h-12 min-[1600px]:h-12">
-              <span className='text-font-color text-sm'>              New Event
+              <span className='text-font-color text-base ml-7'>              New Event
 </span>
             </CurvedButton>
             <Image src={'/assets/icons/newEvent.svg'} height={25} width={25} alt='' className='absolute top-3 left-[10px]'/>
 
             </div>
-            <div className='w-[9vw] ml-2 relative'>
+            <div className='w-[173px] ml-2 relative cursor-pointer'>
             <CurvedButton  backgroundColor="bg-tertiary-color"
             height="min-[400px]:h-12 min-[1600px]:h-12" >
-             <span className='text-font-color text-sm'>              Delete
+             <span className='text-font-color text-base ml-7'>              Delete
 </span>
             </CurvedButton>
-            <Image src={'/assets/icons/newEvent.svg'} height={25} width={25} alt='' className='absolute top-3 left-[10px]'/>
+            <Image src={'/assets/icons/deleteImg.svg'} height={25} width={21} alt='' className='absolute top-3 left-[14px]'/>
             </div>
           </div>
         </div>
@@ -120,11 +120,12 @@ export default function Header() {
             {/* <div>
               <ThemeToggle />
             </div> */}
-            <div>
+            <div className='flex'>
+              <div className='text-base text-font-color mt-[10px] mr-6'>Jonathan Grimes</div>
               <Image
                 width={44}
                 height={44}
-                src="/assets/MoLink/ProfileImage.png"
+                src="/assets/icons/profile.svg"
                 alt=""
                 className=""
               />

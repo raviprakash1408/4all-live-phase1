@@ -4,8 +4,6 @@ import '../styles/global.css';
 
 import { Poppins } from 'next/font/google';
 
-import useTheme from '@/store/themeStore';
-
 const metadata = {
   title: '4all.live',
   description: '4all.live',
@@ -23,20 +21,20 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const isDarkMode = useTheme((state) => state.isDarkMode);
-  // const colorPallete = useTheme((state) => state.colorPallete);
-  document.documentElement.style.setProperty(
-    '--primary-color',
-    isDarkMode ? 'rgba(1, 25, 52, 1)' : '#1B3944'
-  );
-  document.documentElement.style.setProperty(
-    '--tertiary-color',
-    isDarkMode ? 'rgba(1, 34, 67, 1)' : '#21464F'
-  );
-  document.documentElement.style.setProperty(
-    '--status-color',
-    isDarkMode ? 'rgba(75, 109, 133, 1)' : '#1B3944'
-  );
+  // const isDarkMode = useTheme((state) => state.isDarkMode);
+  // // const colorPallete = useTheme((state) => state.colorPallete);
+  // document.documentElement.style.setProperty(
+  //   '--primary-color',
+  //   isDarkMode ? 'rgba(1, 25, 52, 1)' : '#1B3944'
+  // );
+  // document.documentElement.style.setProperty(
+  //   '--tertiary-color',
+  //   isDarkMode ? 'rgba(1, 34, 67, 1)' : '#21464F'
+  // );
+  // document.documentElement.style.setProperty(
+  //   '--status-color',
+  //   isDarkMode ? 'rgba(75, 109, 133, 1)' : '#1B3944'
+  // );
   return (
     <html lang="en" className={`${poppins.variable}`}>
       <head>

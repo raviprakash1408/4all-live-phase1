@@ -24,6 +24,7 @@ module.exports = {
         'font-color': 'var(--font-color)',
         'status-color': 'var( --status-color)',
         'fifthOpacity-color': 'var(--fifthOpacity-color)',
+        'sixth-color':'var(--sixth-color)',
 
         gray: {
           100: '#f7fafc',

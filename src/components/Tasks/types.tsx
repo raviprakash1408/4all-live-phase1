@@ -3,12 +3,9 @@ import type { MouseEventHandler } from 'react';
 export interface TaskTypes {
   id: number;
   title: string;
-  type: string;
-  cameraName?: string;
-  status?: string;
-  creationDate?: number;
-  completionDate?: string;
-  notification?: boolean;
+  startDate?: string;
+  endDate?: string;
+  language?: string;
   // [cameraName: string]: any;
 }
 

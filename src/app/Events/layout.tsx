@@ -25,35 +25,40 @@ export default function DashboardLayout({
     // },
     {
       name: 'Dashboard',
-      img: `/assets/MoLink/Dashboard.svg`,
+      img: `/assets/MoLink/events.svg`,
       type: 'normal',
       url: URLS.dashboard,
     },
     {
-      name: 'Live feeds',
-      img: `/assets/MoLink/LiveFeeds.svg`,
+      name: '',
+      img: `/assets/MoLink/image2.svg`,
       type: 'normal',
       url: URLS.livefeed,
     },
     {
-      name: 'File Manager',
-      img: `/assets/MoLink/LiveRecordings.svg`,
+      name: '',
+      img: `/assets/MoLink/image3.svg`,
       type: 'normal',
       url: URLS.liveRecordings,
     },
     {
-      name: 'Tasks',
-      img: `/assets/MoLink/Tasks.svg`,
+      name: '',
+      img: `/assets/MoLink/image4.svg`,
       type: 'normal',
       url: URLS.tasks,
     },
     {
-      name: 'Cloud Sync',
-      img: `/assets/MoLink/CloudSync.svg`,
+      name: '',
+      img: `/assets/MoLink/image5.svg`,
       type: 'normal',
       url: URLS.cloudSync,
     },
-   
+    {
+      name: '',
+      img: `/assets/MoLink/image6.svg`,
+      type: 'normal',
+      url: URLS.cloudSync,
+    },
   ];
   return (
     <div className="flex h-screen w-full px-1 text-gray-700 antialiased">
