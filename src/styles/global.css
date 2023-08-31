@@ -1,0 +1,541 @@
+@tailwind base;
+
+a {
+  @apply text-blue-700;
+}
+
+a:hover {
+  @apply border-b-2 border-blue-700;
+}
+
+@tailwind components;
+
+@tailwind utilities;
+
+.content p {
+  @apply my-6;
+}
+
+.content ul {
+  @apply my-6;
+}
+:root {
+  --primary-color: #000000;
+  --secondary-color: #FF4615;
+  --tertiary-color:  #1A1A1A;
+  --quaternary-color: #70A6A6;
+  --fifth-color:#002430;
+  --font-color:#fff;
+  --status-color:#26505A;
+  --fifthOpacity-color:rgba(0, 36, 48, 0.7);
+
+
+;
+  /* change color js document.documentElement.style.setProperty("--primary-color","#000")*/
+}
+body {
+  @apply bg-primary-color font-poppins;
+}
+
+@layer utilities {
+  .w-3-minus-20 {
+    width: calc(33.33% - 16px);
+  }
+}
+
+.SidebarContainer{
+container-type:inline-size;
+container-name:sidebar
+}
+.sidebarName{
+  
+}
+@container sidebar (min-width:300px){
+.sidebarName{
+display:none
+}
+}
+.hoverbutton{
+@apply hover:bg-secondary-color ease-in-out duration-300;
+}
+
+.threeDotText{
+@apply truncate hover:text-clip 
+
+}
+
+.ellipse{
+animation: rightToLeft 30s linear infinite; 
+}
+
+@keyframes rightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.footer {
+  @apply absolute bottom-2 hover:text-secondary-color hover:cursor-pointer left-1/2 text-sm  bg-primary-color text-font-color font-bold py-2 px-4 rounded-full -translate-x-1/2;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  10% { transform: translate(-5px, 0) rotate(-5deg); }
+  20% { transform: translate(5px, 0) rotate(5deg); }
+  30% { transform: translate(-5px, 0) rotate(-5deg); }
+  40% { transform: translate(5px, 0) rotate(5deg); }
+  50% { transform: translate(-5px, 0) rotate(-5deg); }
+  60% { transform: translate(5px, 0) rotate(5deg); }
+  70% { transform: translate(-5px, 0) rotate(-5deg); }
+  80% { transform: translate(5px, 0) rotate(5deg); }
+  90% { transform: translate(-5px, 0) rotate(-5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.animate-shake:hover {
+  animation: shake 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+}
+.filter-custom {
+  filter: invert(62%) sepia(15%) saturate(705%) hue-rotate(131deg) brightness(97%) contrast(88%);
+}
+@layer utilities {
+.secondary-color-filter:hover{
+  filter: invert(54%) sepia(43%) saturate(1100%) hue-rotate(128deg) brightness(102%) contrast(101%);
+}
+}
+@layer utilities {
+  .secondary-color-filter{
+    filter: invert(53%) sepia(94%) saturate(802%) hue-rotate(130deg) brightness(96%) contrast(101%);
+  }
+  }
+
+.withoutThumb::-webkit-slider-thumb{
+    -webkit-appearance: none;
+  width: 0;
+  height: 0;
+}
+.withThumb::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 50%;
+}
+.thumbBorder::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--secondary-color);
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid var(--font-color);
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 7px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #21464F;
+  border-radius:100px;
+  height:10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #21464F;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #002430;
+  
+}
+/* Tooltip Container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip Text */
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.mediaImage{
+  filter: brightness(0) saturate(100%) invert(12%) sepia(10%) saturate(5360%) hue-rotate(153deg) brightness(96%) contrast(104%);
+}
+
+/* Tooltip Container on Hover */
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--tertiary-color);
+  border-radius:100px;
+  height:10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tertiary-color);
+  border-radius:100px;
+
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: var(--fifth-color);
+  border-radius:50px;
+
+}
+
+/* Timezoone */
+
+
+
+
+.custom-timezone-select  {
+  color:var(--fifth-color) ;
+
+}
+.custom-timezone-select .timezone-select__control {
+  color: var(--fifth-color);
+
+}
+.customTimezoneSelect .timezone-select {
+  color: var(--fifth-color);
+
+}
+.custom-timezone-select .css-13cymwt-control {
+  color: var(--font-color) ;
+  background-color: var(--primary-color) !important;
+  border-radius: 26px;
+  width: 35rem;
+  border-color: var(--tertiary-color) !important;
+font-size: 15px;
+}
+.custom-timezone-select .css-1dimb5e-singleValue{
+  color:var(--font-color) ;
+  background-color: var(--primary-color) !important;
+font-size: 15px;
+margin-left: 32px;
+
+}
+.custom-timezone-select .css-t3ipsp-control{
+  color:var(--fifth-color);
+  background-color: var(--primary-color) !important;
+  border-radius: 26px;
+  width: 35rem;
+  font-size: 15px;
+  border-color: var(--tertiary-color) !important;
+box-shadow:  var(--tertiary-color) !important;
+
+}
+.custom-timezone-select .css-t3ipsp-control:hover{
+  border-color: var(--tertiary-color);
+}
+
+.custom-timezone-select .css-1nmdiq5-menu{
+  color:var(--font-color) ;
+  background-color: var(--primary-color) !important;
+  width: 35rem;
+  font-size: 15px;
+
+  -webkit-tap-highlight-color: transparent;
+
+}
+
+.custom-timezone-select .css-d7l1ni-option:hover{
+  background-color: var(--tertiary-color) !important;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 15px;
+
+}
+
+.custom-timezone-select .css-1u9des2-indicatorSeparator {
+  background-color: var(--primary-color) !important;
+  font-size: 15px;
+
+}
+.custom-timezone-select .css-tr4s17-option {
+  background-color: var(--tertiary-color) !important;
+
+}
+.custom-timezone-select .css-d7l1ni-option {
+  background-color: var(--primary-color) !important;
+
+}
+
+.custom-timezone-select .css-13cymwt-control:hover {
+  border-color: var(--tertiary-color) !important;
+}
+.custom-timezone-select .css-1n6sfyn-MenuList{
+  background-color: var(--primary-color) !important;
+
+}
+.custom-timezone-select .css-1n6sfyn-MenuList::-webkit-scrollbar {
+  width: 8px !important;
+  /* background-color: var(--primary-color); */
+}
+.custom-timezone-select .css-1n6sfyn-MenuList::-webkit-scrollbar-track {
+  background-color: var(--fifth-color) !important;
+  border-radius:50px !important;
+
+
+}
+.custom-timezone-select .css-1n6sfyn-MenuList::-webkit-scrollbar-thumb {
+  background-color: var(--tertiary-color) !important;
+  border-radius: 100px !important;
+  height:10px !important;
+
+}
+.custom-timezone-select .css-1n6sfyn-MenuList::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tertiary-color) !important;
+  border-radius: 100px !important;
+}
+
+
+/* Date Picker */
+
+
+
+
+.react-datepicker__month{
+  background-color: var(--primary-color) !important;
+}
+.react-datepicker__header{
+  background-color: var(--primary-color) !important;
+
+}
+.react-datepicker{
+  background-color: var(--primary-color) !important;
+border-color:var(--tertiary-color) !important ;
+}
+
+.react-datepicker__triangle::after{
+  top: -1px;
+  border-bottom-color: var(--primary-color) !important;
+}
+.react-datepicker__triangle::before{
+  top: -1px;
+  border-bottom-color: var(--tertiary-color) !important;
+}
+.react-datepicker__current-month{
+  color:var(--quaternary-color) !important
+}
+.react-datepicker__day-name{
+  color:var(--quaternary-color) !important
+
+}
+.react-datepicker__day {
+  color:var(--quaternary-color) !important
+
+
+}
+.react-datepicker__day:hover {
+  background-color: var(--tertiary-color) !important;
+  color: var(--quaternary-color) !important;
+
+
+
+}
+.react-datepicker__day--keyboard-selected{
+  color:var(--primary-color) !important;
+  background-color: var(--secondary-color) !important;
+
+}
+.react-datepicker__navigation-icon::before{
+  border-color: var(--quaternary-color) !important;
+}
+.react-datepicker__header{
+  border-bottom:1px solid var(--quaternary-color) !important;
+
+}
+.react-datepicker-time__header{
+  color:var(--quaternary-color) !important;
+  height: 47px;
+  padding-top: 12px;
+
+}
+/* .react-datepicker__header:not(.react-datepicker__header--has-time-select) {
+  border-left: 1px solid var(--quaternary-color) !important;
+
+} */
+
+.react-datepicker__time-container{
+  /* width: 17rem !important; */
+  background-color: var(--primary-color) !important;
+  border-left: 1px solid var(--primary-color) !important;
+ 
+}
+/* .react-datepicker__time{
+    border-left: 1px solid var(--quaternary-color) !important;
+
+} */
+.react-datepicker__time-box{
+  /* width: 17rem !important; */
+  background-color: var(--primary-color) !important;
+  color: var(--quaternary-color) !important;
+  
+}
+.react-datepicker__time-list-item:hover{
+  background-color: var(--tertiary-color) !important;
+  color: var(--quaternary-color) !important;
+}
+.react-datepicker__time-list-item--selected{
+  color:var(--primary-color) !important;
+  background-color: var(--secondary-color) !important;
+
+}
+.react-datepicker__time-container .react-datepicker__time{
+  background-color: var(--primary-color) !important;
+}
+.react-datepicker__day--selected{
+  background-color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
+
+
+}
+/* .react-datepicker__navigation--next--with-time{
+  right: 0px !important;
+} */
+.react-datepicker__month-container{
+  margin-left:17px ;
+}
+.react-datepicker{
+  display: flex !important;
+}
+.react-datepicker__navigation{
+  top: 9px !important;
+}
+.react-datepicker-popper{
+  /* left:-31px !important; */
+  z-index: 2 !important;
+}
+/* Optional: Adjust scrollbar styles */
+/* Customize the time dropdown */
+
+
+/* Remove the default scrollbar */
+/* .react-datepicker__time-list{
+  max-height: 200px !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+} */
+.react-datepicker__time-list::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: var(--primary-color);
+}
+
+/* Add custom scrollbar */
+/* .react-datepicker__time-list {
+  scrollbar-width: thin;
+  scrollbar-color: #888 black !important;
+} */
+
+.react-datepicker__time-list::-webkit-scrollbar-track {
+  background-color: var(--primary-color);
+
+}
+
+.react-datepicker__time-list::-webkit-scrollbar-thumb {
+  background-color: var(--tertiary-color);
+  border-radius: 0.4rem;
+}
+
+.react-datepicker__time-list::-webkit-scrollbar-thumb:hover {
+  background-color: var(--tertiary-color);
+  border-radius: 0.4rem;
+}
+.show-sidebar {
+  width: 360px;
+  transition: width 7s ease-in-out; /* The transition effect with 1-second duration */
+}
+
+/* This class will hide the InfoSidebar */
+.hide-sidebar {
+  width: 0;
+  transition: width 7s ease-in-out; /* The transition effect with 1-second duration */
+}
+.vjs-tech{
+  border-radius: 16px !important;
+  height: 100% !important;
+  
+}
+.vjs-control-bar{
+  visibility: hidden;
+}
+.vjs-control-text{
+  visibility: hidden;
+
+}
+[id^="vjs_video_"] {
+object-fit: cover !important;
+width: 100%;
+}
+video {
+object-fit: cover !important;
+border-radius: 17px !important;
+height: 98.5% !important;
+width: 99% !important;
+
+}
+
+/* .list {
+  position: relative;
+  float: left;
+  background:var(--tertiary-color);
+  border-left: 1px solid var(--primary-color);
+  margin-right: 10px;
+  
+   
+} */
+/* .triangle, .triangle2 {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -10px;
+  height: 0;
+  width: 0;
+  border-top: 15px solid transparent;
+  border-left: 10px solid var(--tertiary-color);
+  border-bottom: 15px solid transparent;
+  z-index: 2;
+}  
+
+.triangle2 {
+  border-left-color: var(--primary-color);
+  left: 0;
+  z-index: 1;
+} */
+.react-player button.fullscreen {
+  display: none;
+}

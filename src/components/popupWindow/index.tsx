@@ -1,1 +1,0 @@
-export {usePopUpWindow} from './poup.tsx';
