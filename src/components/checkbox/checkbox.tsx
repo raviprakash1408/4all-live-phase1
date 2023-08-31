@@ -27,7 +27,7 @@ const Checkbox = (props: CheckBoxTypes) => {
               onChange={handleCheckboxChange}
             />
             <span
-              className={`flex h-5 w-5 items-center justify-center rounded border-2 border-solid border-quaternary-color ${props.backgroundColor}`}
+              className={`flex h-5 w-5 items-center justify-center rounded border-2 border-solid border-font-color ${props.backgroundColor}`}
             >
               {props.button === true && (
                 <span className="h-2 w-2 bg-secondary-color" />

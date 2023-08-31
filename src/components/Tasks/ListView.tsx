@@ -87,7 +87,7 @@ const ListView = ({
   return (
     <div>
       <div className="cursor-pointer select-none">
-        <div className="group relative ml-5 mt-2 flex h-[70px] w-[91vw] items-center rounded-3xl border-2 border-tertiary-color bg-primary-color pb-2 duration-300 ease-in-out hover:bg-tertiary-color ">
+        <div className="group relative ml-5 mt-2 flex h-[70px] w-[91vw] items-center rounded-3xl border-2 border-tertiary-color bg-sixth-color pb-2 duration-300 ease-in-out hover:bg-tertiary-color ">
           <div className="ml-2.5 mt-4">
             <Checkbox
               backgroundColor=""
@@ -103,10 +103,10 @@ const ListView = ({
               }}
             />
           </div>
-          <div className="ml-8 mt-3.5 w-6 text-base font-medium text-quaternary-color">
+          <div className="ml-4 mt-3.5  text-base font-medium text-quaternary-color">
             <Image
-              width={22}
-              height={21}
+              width={50}
+              height={50}
               src="/assets/icons/eventsImg.svg"
               alt=""
               className="mt-[2px]"
@@ -141,12 +141,56 @@ const ListView = ({
               : item.endDate}
           </div>
 
-          <div className="ml-40 mt-3.5 w-24 text-base text-font-color">
-            <CurvedButton height="" backgroundColor="" />
+          <div className="ml-36 mt-[9px] w-24 text-base text-font-color">
+            <div className="relative w-[173px] cursor-pointer">
+              <CurvedButton
+                backgroundColor="bg-seventh-color"
+                height="min-[400px]:h-12 min-[1600px]:h-12"
+              >
+                <span className="ml-7 text-base text-font-color">
+                  {' '}
+                  Download
+                </span>
+              </CurvedButton>
+              <Image
+                src="/assets/icons/Download.svg"
+                height={25}
+                width={25}
+                alt=""
+                className="absolute left-[14px] top-2.5"
+              />
+            </div>
           </div>
-          <div>{item.language}</div>
+          <div className="ml-52 flex">
+            <div className="mt-[7px] text-lg text-font-color">
+              {item.language}
+            </div>
+            <Image
+              src="/assets/icons/flag.svg"
+              height={36}
+              width={36}
+              alt=""
+              className=" ml-2 mt-[4px]"
+            />
+          </div>
+          <div className="relative ml-14 mt-[9px]  w-[150px] cursor-pointer">
+            <CurvedButton
+              backgroundColor="bg-seventh-color"
+              height="min-[400px]:h-12 min-[1600px]:h-12"
+            >
+              <span className="ml-7 text-base text-font-color"> Setup</span>
+            </CurvedButton>
+            <Image
+              src="/assets/icons/Setup.svg"
+              height={25}
+              width={25}
+              alt=""
+              className="absolute left-[14px] top-3"
+            />
+          </div>
         </div>
       </div>
+
       {showCloseConfirmation && (
         <ConfirmationPopup
           title="Are you sure you want to cancel this task?"

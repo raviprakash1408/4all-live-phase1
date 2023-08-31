@@ -21,9 +21,7 @@ const CurvedButton = (props: DemoButton) => {
     <div
       className={`group flex w-full ${
         props.height
-      } ${curve()} items-center justify-center border-2 border-tertiary-color ${
-        props.backgroundColor
-      }`}
+      } ${curve()} items-center justify-center  ${props.backgroundColor}`}
       // onClick={handleClick}
     >
       {props.children}

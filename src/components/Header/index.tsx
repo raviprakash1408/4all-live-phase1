@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useSelectedLayoutSegment } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-import ThemeToggle from '../toggle button/themeToggle';
 import { CurvedButton } from '../button/curvedButton';
 
 // import type { SystemInfo } from '../DashBoard/types';
@@ -17,7 +16,7 @@ export default function Header() {
 
   useEffect(() => {
     switch (segment) {
-      case 'Events':
+      case 'events':
         setHeading('Events');
         setImage('/assets/MoLink/Dashboard.svg');
         break;
@@ -82,7 +81,7 @@ export default function Header() {
     <header>
       <div className="relative select-none">
         <div className="h-[44px] ">
-          <div className="flex  items-start justify-start ml-4">
+          <div className="ml-4  flex items-start justify-start">
             {/* <Image
               width={24}
               height={24}
@@ -95,23 +94,39 @@ export default function Header() {
               {heading}
             </h3>
           </div>
-          <div className='flex justify-center items-center mt-[-42px] mr-44'>
-            <div className='w-[173px] relative cursor-pointer'>
-            <CurvedButton  backgroundColor="bg-tertiary-color"
-            height="min-[400px]:h-12 min-[1600px]:h-12">
-              <span className='text-font-color text-base ml-7'>              New Event
-</span>
-            </CurvedButton>
-            <Image src={'/assets/icons/newEvent.svg'} height={25} width={25} alt='' className='absolute top-3 left-[10px]'/>
-
+          <div className="mr-44 mt-[-42px] flex items-center justify-center">
+            <div className="relative w-[173px] cursor-pointer">
+              <CurvedButton
+                backgroundColor="bg-tertiary-color"
+                height="min-[400px]:h-12 min-[1600px]:h-12"
+              >
+                <span className="ml-7 text-base text-font-color">
+                  {' '}
+                  New Event
+                </span>
+              </CurvedButton>
+              <Image
+                src="/assets/icons/newEvent.svg"
+                height={25}
+                width={25}
+                alt=""
+                className="absolute left-[10px] top-3"
+              />
             </div>
-            <div className='w-[173px] ml-2 relative cursor-pointer'>
-            <CurvedButton  backgroundColor="bg-tertiary-color"
-            height="min-[400px]:h-12 min-[1600px]:h-12" >
-             <span className='text-font-color text-base ml-7'>              Delete
-</span>
-            </CurvedButton>
-            <Image src={'/assets/icons/deleteImg.svg'} height={25} width={21} alt='' className='absolute top-3 left-[14px]'/>
+            <div className="relative ml-2 w-[173px] cursor-pointer">
+              <CurvedButton
+                backgroundColor="bg-tertiary-color"
+                height="min-[400px]:h-12 min-[1600px]:h-12"
+              >
+                <span className="ml-7 text-base text-font-color"> Delete</span>
+              </CurvedButton>
+              <Image
+                src="/assets/icons/deleteImg.svg"
+                height={25}
+                width={21}
+                alt=""
+                className="absolute left-[14px] top-3"
+              />
             </div>
           </div>
         </div>
@@ -120,8 +135,10 @@ export default function Header() {
             {/* <div>
               <ThemeToggle />
             </div> */}
-            <div className='flex'>
-              <div className='text-base text-font-color mt-[10px] mr-6'>Jonathan Grimes</div>
+            <div className="flex">
+              <div className="mr-6 mt-[10px] text-base text-font-color">
+                Jonathan Grimes
+              </div>
               <Image
                 width={44}
                 height={44}

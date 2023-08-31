@@ -16,6 +16,34 @@ const CameraList: TaskTypes[] = [
     endDate: '31/08/2023',
     language: 'En',
   },
+  {
+    id: 2,
+    title: 'Voluptatem ut asperiores',
+    startDate: '31/08/2023',
+    endDate: '31/08/2023',
+    language: 'En',
+  },
+  {
+    id: 3,
+    title: 'Voluptatem ut asperiores',
+    startDate: '31/08/2023',
+    endDate: '31/08/2023',
+    language: 'En',
+  },
+  {
+    id: 4,
+    title: 'Voluptatem ut asperiores',
+    startDate: '31/08/2023',
+    endDate: '31/08/2023',
+    language: 'En',
+  },
+  {
+    id: 5,
+    title: 'Voluptatem ut asperiores',
+    startDate: '31/08/2023',
+    endDate: '31/08/2023',
+    language: 'En',
+  },
 ];
 const Tasks = () => {
   const [checkbox, setCheckbox] = useState(false);
