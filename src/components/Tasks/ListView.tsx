@@ -6,9 +6,9 @@ import React, { useEffect, useState } from 'react';
 import callApi from '@/utils/constants/apiCall';
 import { MAIN_URL, TASK } from '@/utils/constants/apiUrls';
 
+import { CurvedButton } from '../button/curvedButton';
 import Checkbox from '../checkbox/checkbox';
 import ConfirmationPopup from '../confirmation';
-import Toggle from '../toggle button/toggle';
 
 const ListView = ({
   item,
@@ -142,61 +142,9 @@ const ListView = ({
           </div>
 
           <div className="ml-40 mt-3.5 w-24 text-base text-font-color">
-            {(item.status === 'Queue' ||
-              item.status === 'Processing' ||
-              item.status === 'Stopped') && (
-              <Toggle
-                text
-                id={item.title}
-                button={toggle}
-                onClick={handleToggle}
-                textType="On"
-              />
-            )}
+            <CurvedButton height="" backgroundColor="" />
           </div>
-
-          <button
-            type="button"
-            className=" top-4  ml-28 text-base font-medium text-font-color"
-          >
-            {/* {(item.status === 'Completed' || item.status === 'Cancelled') && (
-              <Image
-                width={22}
-                height={21}
-                src="/assets/icons/Refresh.svg"
-                alt=""
-              />
-            )} */}
-            {/* {(item.status === 'Queue' || item.status === 'Processing') && (
-              <Image
-                width={15}
-                height={21}
-                src="/assets/icons/PauseImg.svg"
-                alt=""
-              />
-            )} */}
-            {item.status === 'Stopped' && (
-              <Image
-                width={17}
-                height={22}
-                src="/assets/icons/PlayImg.svg"
-                alt=""
-              />
-            )}
-          </button>
-          {/* <button
-            type="button"
-            disabled={cancelTask}
-            // onClick={StopTask}
-            className=" top-5 ml-2 mt-2  text-xl font-bold text-quaternary-color"
-          >
-            <Image
-              width={15}
-              height={30}
-              src="/assets/icons/stop-solid.svg"
-              alt=""
-            />
-          </button> */}
+          <div>{item.language}</div>
         </div>
       </div>
       {showCloseConfirmation && (
