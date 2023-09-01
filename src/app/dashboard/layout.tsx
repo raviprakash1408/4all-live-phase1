@@ -60,6 +60,7 @@ export default function DashboardLayout({
       url: URLS.cloudSync,
     },
   ];
+
   return (
     <div className="flex h-screen w-full px-1 text-gray-700 antialiased">
       <div className="h-screen w-full">

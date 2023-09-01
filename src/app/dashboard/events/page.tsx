@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Tasks from '@/components/Tasks';
+import Tasks from '@/components/Events';
 
 const Index = () => {
   return (
-    <div className="m-6 w-[98%] rounded-3xl bg-tertiary-color">
+    <div className="my-6 ml-8 w-[94%] rounded-3xl bg-tertiary-color ">
       {' '}
       <Tasks />
     </div>

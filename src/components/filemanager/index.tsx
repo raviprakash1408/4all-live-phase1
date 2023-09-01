@@ -14,10 +14,10 @@ import {
 
 import Arrow from '../arrow/arrow';
 import ContextMenu from '../contextMenu';
+import VideoPreview from '../Events/newEvent';
 import FolderGridLoading from '../folderGrid/folderGridLoading';
 import InputField from '../input field/InputField';
 import { SmallGrid } from '../smallgrid';
-import VideoPreview from '../Tasks/videoPreview';
 import Toggle from '../toggle button/toggle';
 import BackButton from './backButton';
 import Breadcrumbs from './breadCrumbs';

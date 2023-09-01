@@ -2,10 +2,8 @@
 
 'use client';
 
-import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
-import ProcessingGrid from '../processing';
 import SidebarMenuItem from './sidebarMenuItem';
 import type { MenuItem } from './types';
 
@@ -48,8 +46,8 @@ const Sidebar = ({
     <div className=" select-none bg-tertiary-color">
       <div className="flex">
         <div
-          className={`w-20
-           custom-scrollbar h-[100vh] overflow-y-auto bg-tertiary-color duration-300`}
+          className={`custom-scrollbar mt-4
+           h-[98vh] w-20 overflow-y-auto bg-tertiary-color duration-300`}
         >
           {sidebarMenuItems.map((item) => {
             return (
@@ -79,7 +77,6 @@ const Sidebar = ({
           />
         </button> */}
       </div>
-   
     </div>
   );
 };

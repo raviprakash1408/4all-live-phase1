@@ -107,8 +107,8 @@ const Tasks = () => {
         className="custom-scrollbar h-screen overflow-x-auto overflow-y-hidden"
         onWheel={handleScroll}
       >
-        <div className="relative ml-5 mt-4 flex h-[70px] w-[91vw] items-center rounded-3xl  bg-primary-color ">
-          <div className="ml-2 mt-1">
+        <div className="relative ml-5 mt-4 flex h-[70px] w-[86vw] items-center rounded-3xl  bg-primary-color ">
+          <div className="ml-2 mt-1 w-[7vw]">
             <Checkbox
               backgroundColor=""
               id="Tasks"
@@ -119,19 +119,19 @@ const Tasks = () => {
               }}
             />
           </div>
-          <div className="ml-24 mt-2  text-base font-medium text-font-color">
+          <div className=" mt-2 w-[22vw]  text-base font-medium text-font-color">
             Event
           </div>
-          <div className="ml-[24rem] mt-2 text-base font-medium text-font-color">
+          <div className=" mt-2 w-[11vw] text-base font-medium text-font-color">
             Start Date
           </div>
-          <div className="ml-32 mt-2 text-base font-medium text-font-color">
+          <div className="mt-2 w-[11vw] text-base font-medium text-font-color">
             End Date
           </div>
-          <div className="ml-32 mt-2 whitespace-nowrap text-base font-medium text-font-color">
+          <div className=" mt-2 w-[15vw] whitespace-nowrap text-base font-medium text-font-color">
             Download Transcript
           </div>
-          <div className="ml-32 mt-2 whitespace-nowrap text-base font-medium text-font-color">
+          <div className=" mt-2 whitespace-nowrap text-base font-medium text-font-color">
             Language
           </div>
         </div>

@@ -87,7 +87,7 @@ const ListView = ({
   return (
     <div>
       <div className="cursor-pointer select-none">
-        <div className="group relative ml-5 mt-2 flex h-[70px] w-[91vw] items-center rounded-3xl border-2 border-tertiary-color bg-sixth-color pb-2 duration-300 ease-in-out hover:bg-tertiary-color ">
+        <div className="group relative ml-5 mt-2 flex h-[70px] w-[86vw] items-center rounded-3xl border-2 border-tertiary-color bg-sixth-color pb-2 duration-300 ease-in-out hover:bg-tertiary-color ">
           <div className="ml-2.5 mt-4">
             <Checkbox
               backgroundColor=""
@@ -112,28 +112,14 @@ const ListView = ({
               className="mt-[2px]"
             />
           </div>
-          <div className="ml-8 mt-3.5 w-36 whitespace-nowrap text-base font-normal text-font-color">
+          <div className="ml-8 mt-3.5 w-[20vw] whitespace-nowrap text-base font-normal text-font-color">
             {item.title}
           </div>
-          <div className="ml-16 flex w-48 flex-col">
-            <div
-              className={`mt-1 ${
-                item.type === 'File deletion' ? 'mt-4' : ''
-              } whitespace-nowrap text-base font-normal text-quaternary-color`}
-            >
-              {item.task_type}
-            </div>
-            <div className="relative pb-4 pt-1">
-              <span className="absolute rounded-full bg-tertiary-color px-2 text-xs text-font-color group-hover:bg-primary-color">
-                {item?.live_recording_settings?.camera_name}
-              </span>
-            </div>
-          </div>
 
-          <div className="ml-8 mt-3.5 whitespace-nowrap text-base font-normal text-font-color">
+          <div className="ml-8 mt-3.5 w-[11vw] whitespace-nowrap text-base font-normal text-font-color">
             {item.startDate}
           </div>
-          <div className="ml-32 mt-3.5 w-12 text-base font-normal text-font-color">
+          <div className="mt-3.5 w-[11vw] text-base font-normal text-font-color">
             {item.status === 'Queue' ||
             item.status === 'Stopped' ||
             item.status === 'Processing'
@@ -141,7 +127,7 @@ const ListView = ({
               : item.endDate}
           </div>
 
-          <div className="ml-36 mt-[9px] w-24 text-base text-font-color">
+          <div className=" mt-[9px] w-[15vw] text-base text-font-color">
             <div className="relative w-[173px] cursor-pointer">
               <CurvedButton
                 backgroundColor="bg-seventh-color"
@@ -161,7 +147,7 @@ const ListView = ({
               />
             </div>
           </div>
-          <div className="ml-52 flex">
+          <div className=" flex">
             <div className="mt-[7px] text-lg text-font-color">
               {item.language}
             </div>

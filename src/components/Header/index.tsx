@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useSelectedLayoutSegment } from 'next/navigation';
+import { useRouter, useSelectedLayoutSegment } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { CurvedButton } from '../button/curvedButton';
@@ -13,7 +13,16 @@ export default function Header() {
 
   const [heading, setHeading] = useState('');
   const [img, setImage] = useState<string | null>(null);
-
+  const [isOnNewEventPage, setIsOnNewEventPage] = useState(false);
+  const router = useRouter();
+  useEffect(() => {
+    if (window.location.href.includes('/dashboard/events/newEvent/')) {
+      setIsOnNewEventPage(true);
+    } else {
+      setIsOnNewEventPage(false);
+    }
+    console.log('segment', window.location.href);
+  });
   useEffect(() => {
     switch (segment) {
       case 'events':
@@ -77,9 +86,19 @@ export default function Header() {
   if (img === null) {
     return null;
   }
+  const handleNewEventClick = () => {
+    // You can also update the segment state here if needed
+    // setSegment('events');
+
+    // Use router.push to navigate to the desired URL
+    router.push('/dashboard/events/newEvent');
+  };
+
   return (
     <header>
-      <div className="relative select-none">
+      <div
+        className={`relative select-none ${isOnNewEventPage ? 'hidden' : ''}`}
+      >
         <div className="h-[44px] ">
           <div className="ml-4  flex items-start justify-start">
             {/* <Image
@@ -94,25 +113,34 @@ export default function Header() {
               {heading}
             </h3>
           </div>
-          <div className="mr-44 mt-[-42px] flex items-center justify-center">
-            <div className="relative w-[173px] cursor-pointer">
-              <CurvedButton
-                backgroundColor="bg-tertiary-color"
-                height="min-[400px]:h-12 min-[1600px]:h-12"
+          <div className="mr-44 mt-[-42px] flex items-center justify-center no-underline">
+            <div className="no-underline">
+              {/* <Link href="/dashboard/events/newEvent"> */}
+              <button
+                type="button"
+                onClick={handleNewEventClick}
+                className="relative w-[173px] cursor-pointer "
               >
-                <span className="ml-7 text-base text-font-color">
-                  {' '}
-                  New Event
-                </span>
-              </CurvedButton>
-              <Image
-                src="/assets/icons/newEvent.svg"
-                height={25}
-                width={25}
-                alt=""
-                className="absolute left-[10px] top-3"
-              />
+                <CurvedButton
+                  backgroundColor="bg-tertiary-color"
+                  height="min-[400px]:h-12 min-[1600px]:h-12"
+                >
+                  <span className="ml-7 text-base text-font-color">
+                    {' '}
+                    New Event
+                  </span>
+                </CurvedButton>
+                <Image
+                  src="/assets/icons/newEvent.svg"
+                  height={25}
+                  width={25}
+                  alt=""
+                  className="absolute left-[10px] top-3"
+                />
+              </button>
+              {/* </Link> */}
             </div>
+
             <div className="relative ml-2 w-[173px] cursor-pointer">
               <CurvedButton
                 backgroundColor="bg-tertiary-color"
