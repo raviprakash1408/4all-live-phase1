@@ -94,41 +94,46 @@ export default function Header() {
               {heading}
             </h3>
           </div>
-          <div className="mr-44 mt-[-42px] flex items-center justify-center">
-            <div className="relative w-[173px] cursor-pointer">
-              <CurvedButton
-                backgroundColor="bg-tertiary-color"
-                height="min-[400px]:h-12 min-[1600px]:h-12"
-              >
-                <span className="ml-7 text-base text-font-color">
-                  {' '}
-                  New Event
-                </span>
-              </CurvedButton>
-              <Image
-                src="/assets/icons/newEvent.svg"
-                height={25}
-                width={25}
-                alt=""
-                className="absolute left-[10px] top-3"
-              />
+          {heading === 'Events' && (
+            <div className="mr-44 mt-[-42px] flex items-center justify-center">
+              <div className="relative w-[173px] cursor-pointer">
+                <CurvedButton
+                  backgroundColor="bg-tertiary-color"
+                  height="min-[400px]:h-12 min-[1600px]:h-12"
+                >
+                  <span className="ml-7 text-base text-font-color">
+                    {' '}
+                    New Event
+                  </span>
+                </CurvedButton>
+                <Image
+                  src="/assets/icons/newEvent.svg"
+                  height={25}
+                  width={25}
+                  alt=""
+                  className="absolute left-[10px] top-3"
+                />
+              </div>
+              <div className="relative ml-2 w-[173px] cursor-pointer">
+                <CurvedButton
+                  backgroundColor="bg-tertiary-color"
+                  height="min-[400px]:h-12 min-[1600px]:h-12"
+                >
+                  <span className="ml-7 text-base text-font-color">
+                    {' '}
+                    Delete
+                  </span>
+                </CurvedButton>
+                <Image
+                  src="/assets/icons/deleteImg.svg"
+                  height={25}
+                  width={21}
+                  alt=""
+                  className="absolute left-[14px] top-3"
+                />
+              </div>
             </div>
-            <div className="relative ml-2 w-[173px] cursor-pointer">
-              <CurvedButton
-                backgroundColor="bg-tertiary-color"
-                height="min-[400px]:h-12 min-[1600px]:h-12"
-              >
-                <span className="ml-7 text-base text-font-color"> Delete</span>
-              </CurvedButton>
-              <Image
-                src="/assets/icons/deleteImg.svg"
-                height={25}
-                width={21}
-                alt=""
-                className="absolute left-[14px] top-3"
-              />
-            </div>
-          </div>
+          )}
         </div>
         <div className="absolute bottom-[11px] right-0">
           <div className=" flex items-end justify-end gap-8">

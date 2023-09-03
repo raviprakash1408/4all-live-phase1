@@ -5,13 +5,7 @@ import React from 'react';
 
 import type { MenuItem } from './types';
 
-const SidebarMenuItem = ({
-  item,
-  showMenu,
-}: {
-  item: MenuItem;
-  showMenu: boolean;
-}) => {
+const SidebarMenuItem = ({ item }: { item: MenuItem; showMenu: boolean }) => {
   // get current url using next js router
   const pathname = usePathname() || '';
   const isActive = pathname.includes(item.url);
@@ -63,14 +57,12 @@ const SidebarMenuItem = ({
           <Link href={item.url}>
             <div
               className={`${
-                isActive
-                  ? 'mt-[3px] '
-                  : 'mt-[3px]'
-              } group flex cursor-pointer mb-5 items-center px-3 duration-300  ease-in-out  min-[400px]:h-[2.2rem] min-[1200px]:h-[3.2rem] min-[1600px]:h-14  `}
+                isActive ? 'mt-[3px] ' : 'mt-[3px]'
+              } group mb-5 flex cursor-pointer items-center px-3 duration-300  ease-in-out  min-[400px]:h-[2.2rem] min-[1200px]:h-[3.2rem] min-[1600px]:h-14  `}
             >
               <div
                 className={`${
-                  isActive ? 'bg-secondary-color':"bg-sixth-color"
+                  isActive ? 'bg-secondary-color' : 'bg-sixth-color'
                 } flex items-center  justify-center rounded-2xl  duration-300 ease-in-out group-hover:bg-secondary-color  xl:h-[60px] xl:w-[70px]`}
               >
                 <Image
@@ -84,7 +76,6 @@ const SidebarMenuItem = ({
                   draggable={false}
                 />
               </div>
-             
             </div>
           </Link>
         );

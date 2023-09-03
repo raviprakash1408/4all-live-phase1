@@ -1,11 +1,7 @@
-// component name: Sidebar
-
 'use client';
 
-import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 
-import ProcessingGrid from '../processing';
 import SidebarMenuItem from './sidebarMenuItem';
 import type { MenuItem } from './types';
 
@@ -15,7 +11,7 @@ const Sidebar = ({
   sidebarMenuItems: Array<MenuItem>;
 }) => {
   const [status, setStatus] = useState(false);
-  const [showMenu, setShowMenu] = useState<boolean>(true);
+  const [showMenu] = useState<boolean>(true);
   const popupRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,8 +44,8 @@ const Sidebar = ({
     <div className=" select-none bg-tertiary-color">
       <div className="flex">
         <div
-          className={`w-20
-           custom-scrollbar h-[100vh] overflow-y-auto bg-tertiary-color duration-300`}
+          className={`custom-scrollbar
+           h-[100vh] w-20 overflow-y-auto bg-tertiary-color duration-300`}
         >
           {sidebarMenuItems.map((item) => {
             return (
@@ -79,7 +75,6 @@ const Sidebar = ({
           />
         </button> */}
       </div>
-   
     </div>
   );
 };
