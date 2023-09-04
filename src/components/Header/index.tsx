@@ -1,9 +1,12 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-console */
 
 'use client';
 
 import Image from 'next/image';
-import { useSelectedLayoutSegment } from 'next/navigation';
+import { useRouter, useSelectedLayoutSegment } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { CurvedButton } from '../button/curvedButton';
@@ -20,7 +23,9 @@ export default function Header() {
   useEffect(() => {
     if (window.location.href.includes('/dashboard/events/newEvent/')) {
       setIsOnNewEventPage(true);
-    } else {
+      setHeading('New event');
+    } else if (window.location.href.includes('/dashboard/events')) {
+      setHeading('Events');
       setIsOnNewEventPage(false);
     }
     console.log('segment', window.location.href);
@@ -88,21 +93,25 @@ export default function Header() {
   if (img === null) {
     return null;
   }
-  // const handleNewEventClick = () => {
-  //   // You can also update the segment state here if needed
-  //   // setSegment('events');
+  const router = useRouter();
+  const handleNewEventClick = () => {
+    // You can also update the segment state here if needed
+    // setSegment('events');
 
-  //   // Use router.push to navigate to the desired URL
-  //   router.push('/dashboard/events/newEvent');
-  // };
+    // Use router.push to navigate to the desired URL
+    router.push('/dashboard/events/newEvent');
+  };
+
+  const handleBack = () => {
+    setHeading('Events');
+    router.push('/dashboard/events/');
+  };
 
   return (
     <header>
-      <div
-        className={`relative select-none ${isOnNewEventPage ? 'hidden' : ''}`}
-      >
-        <div className="h-[44px] ">
-          <div className="ml-4  flex items-start justify-start">
+      <div className="relative select-none">
+        <div className="relative flex h-[44px] items-center justify-between">
+          <div className="-mt-4 ml-4 flex items-center">
             {/* <Image
               width={24}
               height={24}
@@ -111,13 +120,33 @@ export default function Header() {
               className="secondary-color-filter mr-2 mt-1"
               draggable={false}
             /> */}
+            {(heading !== 'Events' || isOnNewEventPage) && (
+              <button
+                type="button"
+                className="ml-[15px] h-12 w-12 rounded-2xl bg-tertiary-color"
+                onClick={handleBack}
+              >
+                <Image
+                  src="/assets/icons/arrow-close.svg"
+                  height={8}
+                  width={8}
+                  alt=""
+                  className="ml-[17px]"
+                />
+              </button>
+            )}
             <h3 className="mt-1 pl-2 text-lg font-bold text-font-color">
               {heading}
             </h3>
           </div>
           {heading === 'Events' && (
-            <div className="mr-44 mt-[-42px] flex items-center justify-center">
-              <div className="relative w-[173px] cursor-pointer">
+            <div className="absolute -top-2 left-[40%] flex justify-between">
+              <div
+                className={`relative w-[173px] cursor-pointer ${
+                  isOnNewEventPage ? 'hidden' : ''
+                }`}
+                onClick={handleNewEventClick}
+              >
                 <CurvedButton
                   backgroundColor="bg-tertiary-color"
                   height="min-[400px]:h-12 min-[1600px]:h-12"
@@ -135,7 +164,11 @@ export default function Header() {
                   className="absolute left-[10px] top-3"
                 />
               </div>
-              <div className="relative ml-2 w-[173px] cursor-pointer">
+              <div
+                className={`relative ml-2 w-[173px] cursor-pointer ${
+                  isOnNewEventPage ? 'hidden' : ''
+                }`}
+              >
                 <CurvedButton
                   backgroundColor="bg-tertiary-color"
                   height="min-[400px]:h-12 min-[1600px]:h-12"
