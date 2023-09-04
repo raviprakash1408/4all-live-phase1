@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 'use client';
 
 import Image from 'next/image';
@@ -21,12 +23,12 @@ const ListView = ({
   onItemSelect: (selectedItem: any) => void;
   // onDelete: (status: number) => void;
 }) => {
-  const [toggle, setToggle] = useState(item.notification);
+  const [, setToggle] = useState(item.notification);
   const [checkbox, setCheckbox] = useState(false);
-  const [preview, setPreview] = useState(false);
+  // const [preview, setPreview] = useState(false);
   // const [cameraNames, setCameraNames] = useState(false);
   const [showCloseConfirmation, setShowCloseConfirmation] = useState(false);
-  const [cancelTask, setCancelTask] = useState(false);
+  const [, setCancelTask] = useState(false);
   // const [showCancelling, setShowCancelling] = useState('');
 
   // const handleCloseClick = () => {
@@ -69,19 +71,19 @@ const ListView = ({
     }
   });
 
-  const handleToggle = () => {
-    setToggle((val: boolean) => !val);
-  };
+  // const handleToggle = () => {
+  //   setToggle((val: boolean) => !val);
+  // };
 
-  const downloadUrl =
-    'https://playlists.mycujoo.football/eu/ckjvdj4k4f10e0gdrn9322dgm/master.m3u8';
-  const handleDownload = () => {
-    // Create a temporary link element
-    const link = document.createElement('a');
-    link.href = downloadUrl;
-    link.download = 'filename.m3u8'; // Set the desired file name here
-    link.click();
-  };
+  // const downloadUrl =
+  //   'https://playlists.mycujoo.football/eu/ckjvdj4k4f10e0gdrn9322dgm/master.m3u8';
+  // const handleDownload = () => {
+  //   // Create a temporary link element
+  //   const link = document.createElement('a');
+  //   link.href = downloadUrl;
+  //   link.download = 'filename.m3u8'; // Set the desired file name here
+  //   link.click();
+  // };
   // console.log('dropdown', cameraNames);
   // const formattedDate = format(new Date(item.created_date), 'dd-MM-yyyy');
   return (

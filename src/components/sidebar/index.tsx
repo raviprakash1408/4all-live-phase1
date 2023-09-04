@@ -1,5 +1,3 @@
-// component name: Sidebar
-
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -13,7 +11,7 @@ const Sidebar = ({
   sidebarMenuItems: Array<MenuItem>;
 }) => {
   const [status, setStatus] = useState(false);
-  const [showMenu, setShowMenu] = useState<boolean>(true);
+  const [showMenu] = useState<boolean>(true);
   const popupRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -46,8 +44,8 @@ const Sidebar = ({
     <div className=" select-none bg-tertiary-color">
       <div className="flex">
         <div
-          className={`custom-scrollbar mt-4
-           h-[98vh] w-20 overflow-y-auto bg-tertiary-color duration-300`}
+          className={`custom-scrollbar
+           h-[100vh] w-20 overflow-y-auto bg-tertiary-color duration-300`}
         >
           {sidebarMenuItems.map((item) => {
             return (

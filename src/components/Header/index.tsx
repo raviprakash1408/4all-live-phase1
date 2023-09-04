@@ -1,7 +1,9 @@
+/* eslint-disable no-console */
+
 'use client';
 
 import Image from 'next/image';
-import { useRouter, useSelectedLayoutSegment } from 'next/navigation';
+import { useSelectedLayoutSegment } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { CurvedButton } from '../button/curvedButton';
@@ -14,7 +16,7 @@ export default function Header() {
   const [heading, setHeading] = useState('');
   const [img, setImage] = useState<string | null>(null);
   const [isOnNewEventPage, setIsOnNewEventPage] = useState(false);
-  const router = useRouter();
+  // const router = useRouter();
   useEffect(() => {
     if (window.location.href.includes('/dashboard/events/newEvent/')) {
       setIsOnNewEventPage(true);
@@ -86,13 +88,13 @@ export default function Header() {
   if (img === null) {
     return null;
   }
-  const handleNewEventClick = () => {
-    // You can also update the segment state here if needed
-    // setSegment('events');
+  // const handleNewEventClick = () => {
+  //   // You can also update the segment state here if needed
+  //   // setSegment('events');
 
-    // Use router.push to navigate to the desired URL
-    router.push('/dashboard/events/newEvent');
-  };
+  //   // Use router.push to navigate to the desired URL
+  //   router.push('/dashboard/events/newEvent');
+  // };
 
   return (
     <header>
@@ -113,14 +115,9 @@ export default function Header() {
               {heading}
             </h3>
           </div>
-          <div className="mr-44 mt-[-42px] flex items-center justify-center no-underline">
-            <div className="no-underline">
-              {/* <Link href="/dashboard/events/newEvent"> */}
-              <button
-                type="button"
-                onClick={handleNewEventClick}
-                className="relative w-[173px] cursor-pointer "
-              >
+          {heading === 'Events' && (
+            <div className="mr-44 mt-[-42px] flex items-center justify-center">
+              <div className="relative w-[173px] cursor-pointer">
                 <CurvedButton
                   backgroundColor="bg-tertiary-color"
                   height="min-[400px]:h-12 min-[1600px]:h-12"
@@ -137,26 +134,27 @@ export default function Header() {
                   alt=""
                   className="absolute left-[10px] top-3"
                 />
-              </button>
-              {/* </Link> */}
+              </div>
+              <div className="relative ml-2 w-[173px] cursor-pointer">
+                <CurvedButton
+                  backgroundColor="bg-tertiary-color"
+                  height="min-[400px]:h-12 min-[1600px]:h-12"
+                >
+                  <span className="ml-7 text-base text-font-color">
+                    {' '}
+                    Delete
+                  </span>
+                </CurvedButton>
+                <Image
+                  src="/assets/icons/deleteImg.svg"
+                  height={25}
+                  width={21}
+                  alt=""
+                  className="absolute left-[14px] top-3"
+                />
+              </div>
             </div>
-
-            <div className="relative ml-2 w-[173px] cursor-pointer">
-              <CurvedButton
-                backgroundColor="bg-tertiary-color"
-                height="min-[400px]:h-12 min-[1600px]:h-12"
-              >
-                <span className="ml-7 text-base text-font-color"> Delete</span>
-              </CurvedButton>
-              <Image
-                src="/assets/icons/deleteImg.svg"
-                height={25}
-                width={21}
-                alt=""
-                className="absolute left-[14px] top-3"
-              />
-            </div>
-          </div>
+          )}
         </div>
         <div className="absolute bottom-[11px] right-0">
           <div className=" flex items-end justify-end gap-8">

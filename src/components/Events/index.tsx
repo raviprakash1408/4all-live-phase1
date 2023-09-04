@@ -47,13 +47,11 @@ const CameraList: TaskTypes[] = [
 ];
 const Tasks = () => {
   const [checkbox, setCheckbox] = useState(false);
-  const [sortedData, setSortedData] = useState(CameraList);
-  const [sortingCriterion, setSortingCriterion] = useState(null);
+  const [sortedData] = useState(CameraList);
   // const [items, setItems] = useState([...]);
   const [selectedId, setSelectedId] = useState(0);
-  const [deleteButton, setDeleteButton] = useState(true);
-  const [showConfirmation, setShowConfirmation] = useState(false);
-  const [selectedIdForDelete, setSelectedIdForDelete] = useState(null);
+  const [, setDeleteButton] = useState(true);
+  const [selectedIdForDelete] = useState(null);
   // Update the status of an item to "Cancelled"
   // const handleStatusUpdate = (itemId: number) => {
   //   setSortedData((prevData: any) => {
@@ -104,7 +102,7 @@ const Tasks = () => {
   return (
     <div className="select-none">
       <div
-        className="custom-scrollbar h-screen overflow-x-auto overflow-y-hidden"
+        className="custom-scrollbar h-[88vh] overflow-x-auto overflow-y-hidden"
         onWheel={handleScroll}
       >
         <div className="relative ml-5 mt-4 flex h-[70px] w-[86vw] items-center rounded-3xl  bg-primary-color ">

@@ -14,7 +14,6 @@ import {
 
 import Arrow from '../arrow/arrow';
 import ContextMenu from '../contextMenu';
-import VideoPreview from '../Events/newEvent';
 import FolderGridLoading from '../folderGrid/folderGridLoading';
 import InputField from '../input field/InputField';
 import { SmallGrid } from '../smallgrid';
@@ -110,7 +109,7 @@ const FileManager = () => {
   });
   const [selectedOption, setSelectedOption] = useState('');
   const [selectedFolderName, setSelectedFolderName] = useState('');
-  const [contextFileData, setContextFileData] = useState<FileData | null>(null);
+  const [, setContextFileData] = useState<FileData | null>(null);
   const [playVideo, setPLayVideo] = useState(false);
   // const [videoPlayUrl,setVideoPlayUrl]=useState<FileData|null>();
 
@@ -641,14 +640,14 @@ const FileManager = () => {
               )}
               {playVideo && (
                 <div>
-                  <VideoPreview
+                  {/* <VideoPreview
                     title={contextFileData?.name ? contextFileData?.name : ''}
                     // url={`${MAIN_URL}get_file${contextFileData?.path}`}
                     url="http://192.168.50.84:8888/h264/e8e84e90-43a6-477c-95da-e4f783ce6e86/index.m3u8"
                     onClose={() => {
                       setPLayVideo(false);
                     }}
-                  />
+                  /> */}
                 </div>
               )}
             </div>
