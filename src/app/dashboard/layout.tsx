@@ -51,7 +51,7 @@ export default function DashboardLayout({
       name: '',
       img: `/assets/MoLink/image5.svg`,
       type: 'normal',
-      url: URLS.cloudSync,
+      url: URLS.spaces,
     },
     {
       name: '',
