@@ -4,7 +4,7 @@ export const URLS = {
   spaces: 'offline/dashboard',
   liveRecordings: 'offline/liverecordings',
   tasks: 'offline/tasks',
-  cloudSync: 'offline/cloudSync',
+  cloudSync: 'dashboard/settings',
   controlDevices: 'offline/controlDevices',
   addons: 'offline/addons',
   history: 'offline/history',
