@@ -44,11 +44,11 @@ const InputField = (props: InputItem) => {
           type="text"
           className={`${props.width} flex-1 ${
             props.height
-          } rounded-full border-2 border-solid ${
+          } rounded-2xl border-2 border-solid ${
             touched ? `${props.errorBorder}` : `${props.borderColor}`
           }  bg-primary-color ${
             props.img ? `${props.textMargin}` : `${props.textMargin}`
-          } pr-2 text-sm  font-normal  text-font-color transition-colors  duration-300 ease-in-out placeholder:text-quaternary-color  ${
+          } pr-2 text-sm font-thin  text-font-color transition-colors  duration-300 ease-in-out placeholder:text-font-color  ${
             touched
               ? `hover:${props.errorBorder}`
               : `hover:${props.borderColor}`
