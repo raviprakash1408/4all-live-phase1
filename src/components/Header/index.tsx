@@ -10,7 +10,6 @@ import { useRouter, useSelectedLayoutSegment } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import { CurvedButton } from '../button/curvedButton';
-import InputField from '../input field/InputField';
 
 // import type { SystemInfo } from '../DashBoard/types';
 
@@ -139,20 +138,6 @@ export default function Header() {
             <h3 className="mt-1 pl-2 text-lg font-bold text-font-color ">
               {heading}
             </h3>
-            <div>
-              <InputField
-                name={undefined}
-                validation={false}
-                withImage
-                height="h-[50px] ml-4"
-                width="w-[227px] pl-[47px]"
-                borderColor="border-tertiary-color "
-                placeholder="Search event"
-                imgCursor="top-2 left-3"
-                bottominput="hidden"
-                img="/assets/icons/Search.svg"
-              />
-            </div>
           </div>
           {heading === 'Events' && (
             <div className="absolute -top-2 left-[40%] flex justify-between">
@@ -206,34 +191,6 @@ export default function Header() {
         </div>
         <div className="absolute bottom-[11px] right-0">
           <div className=" flex items-end justify-end gap-8">
-            <div className="flex h-12 w-12 rounded-full bg-tertiary-color">
-              <Image
-                width={39}
-                height={27}
-                src="/assets/icons/notification.svg"
-                alt=""
-                className="ml-1 mt-2"
-              />
-            </div>
-            <div className="flex h-12 w-48 rounded-full bg-tertiary-color">
-              <Image
-                width={30}
-                height={30}
-                src="/assets/icons/team.svg"
-                alt=""
-                className="ml-2 "
-              />
-              <div className="ml-4 mt-3 text-center text-sm text-font-color">
-                ASL Group
-              </div>
-              <Image
-                width={20}
-                height={20}
-                src="/assets/icons/switch_team.svg"
-                alt=""
-                className="ml-4 "
-              />
-            </div>
             {/* <div>
               <ThemeToggle />
             </div> */}

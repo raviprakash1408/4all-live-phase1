@@ -167,21 +167,18 @@ const Index = () => {
                 className="absolute left-3 top-3"
               />
             </div>
-            <div className="relative">
-              <button
-                className="h-[50px] w-[380px] rounded-[20px] border-2 border-seventh-color bg-tertiary-color text-[16px] text-font-color"
-                type="button"
-              >
-                Delete
-              </button>
+            <button
+              className="flex h-[50px] w-[380px] items-center gap-6 rounded-[20px] border-2 border-seventh-color bg-tertiary-color p-4 text-[16px] text-font-color"
+              type="button"
+            >
               <Image
                 src="/assets/icons/delete.svg"
                 alt="delete"
                 width={17}
                 height={17}
-                className="absolute left-3 top-3"
               />
-            </div>
+              Delete
+            </button>
           </div>
         </div>
         <div className="flex h-[332px] w-[49%] flex-col items-center rounded-[20px] bg-sixth-color p-5">
