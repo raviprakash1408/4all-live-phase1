@@ -179,7 +179,7 @@ const Index = () => {
                 alt="delete"
                 width={17}
                 height={17}
-                className="absolute left-3 top-3"
+                className="absolute left-4 top-4"
               />
             </div>
           </div>

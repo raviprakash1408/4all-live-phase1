@@ -28,6 +28,25 @@ export default function Header() {
     } else if (window.location.href.includes('/dashboard/events')) {
       setHeading('Events');
       setIsOnNewEventPage(false);
+    } else if (
+      window.location.href.includes('/dashboard/settings/team-settings')
+    ) {
+      setHeading('Team settings');
+      setIsOnNewEventPage(false);
+    } else if (
+      window.location.href.includes('/dashboard/settings/team-roles')
+    ) {
+      setHeading('Team roles');
+      setIsOnNewEventPage(false);
+    } else if (window.location.href.includes('/dashboard/settings/billing')) {
+      setHeading('Team billing');
+      setIsOnNewEventPage(false);
+    } else if (window.location.href.includes('/dashboard/settings/invoices')) {
+      setHeading('Team invoices');
+      setIsOnNewEventPage(false);
+    } else if (window.location.href.includes('/dashboard/settings')) {
+      setHeading('Settings');
+      setIsOnNewEventPage(false);
     }
     console.log('segment', window.location.href);
   });
@@ -104,8 +123,13 @@ export default function Header() {
   };
 
   const handleBack = () => {
-    setHeading('Events');
-    router.push('/dashboard/events/');
+    if (heading === 'Team settings') {
+      setHeading('Settings');
+      router.push('/dashboard/settings/');
+    } else {
+      setHeading('Events');
+      router.push('/dashboard/events/');
+    }
   };
 
   return (
@@ -204,15 +228,15 @@ export default function Header() {
             </div>
           )}
         </div>
-        <div className="absolute bottom-[11px] right-0">
+        <div className="absolute bottom-[7px] right-0">
           <div className=" flex items-end justify-end gap-8">
-            <div className="flex h-12 w-12 rounded-full bg-tertiary-color">
+            <div className="-ml-2 h-12 w-12 rounded-full bg-tertiary-color">
               <Image
                 width={39}
                 height={27}
                 src="/assets/icons/notification.svg"
                 alt=""
-                className="ml-1 mt-2"
+                className=""
               />
             </div>
             <div className="flex h-12 w-48 rounded-full bg-tertiary-color">
@@ -251,7 +275,6 @@ export default function Header() {
             </div>
           </div>
         </div>
-        <hr className=" w-full border border-tertiary-color" />
       </div>
     </header>
   );

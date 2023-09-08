@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 
 'use client';
@@ -5,117 +7,148 @@
 import Image from 'next/image';
 import React, { useState } from 'react';
 
+import APIKeys from '@/components/APIKeys';
+import General from '@/components/generalSetting';
+import Notifications from '@/components/Notifications';
+import Teams from '@/components/teams';
+
 const Settings = () => {
-  const [userName, setUserName] = useState('4ALLCompany');
-  const [name, setName] = useState('4ALLCompany');
-  const [email, setEmail] = useState('info@4allcompany.com');
+  const [isGeneral, setIsGeneral] = useState(true);
+  const [isTeams, setIsTeams] = useState(false);
+  const [isKeys, setIsKeys] = useState(false);
+  const [isNotifications, setIsNotifications] = useState(false);
+  const handleGeneral = () => {
+    setIsTeams(false);
+    setIsKeys(false);
+    setIsNotifications(false);
+    setIsGeneral(true);
+  };
+  const handleTeams = () => {
+    setIsGeneral(false);
+    setIsKeys(false);
+    setIsNotifications(false);
+    setIsTeams(true);
+  };
+  const handleKeys = () => {
+    setIsGeneral(false);
+    setIsTeams(false);
+    setIsNotifications(false);
+    setIsKeys(true);
+  };
+  const handleNotifications = () => {
+    setIsGeneral(false);
+    setIsTeams(false);
+    setIsKeys(false);
+    setIsNotifications(true);
+  };
   return (
-    <div className="flex h-[90vh] w-[100%] justify-between bg-primary-color p-4">
-      <div className="flex h-[50px] w-[10%] items-center rounded-tl-3xl border-2 border-tertiary-color border-b-[#FF4615] bg-tertiary-color px-4">
-        <Image
-          src="/assets/icons/settings.svg"
-          alt="settings"
-          width={25}
-          height={25}
-        />
-        <h3 className="ml-4 text-[16px] text-font-color">General</h3>
-      </div>
-      <div className="w-[90%] rounded-3xl rounded-tl-none bg-tertiary-color p-8">
-        <h3 className="text-[20px] text-font-color">
-          Personal account settings
-        </h3>
-        <p className="mt-0 text-[16px] text-font-color">
-          Autem explicabo fuga eligendi veniam reprehenderit inventore. Quia
-          voluptatem consectetur et commodi. Qui esse pariatur.
-        </p>
-        <div className="mt-4 w-[100%] rounded-3xl bg-sixth-color p-8">
-          <p className="text-[16px] text-font-color">
-            This is your URL namespace within 4all.live
-          </p>
-          <div className="relative mb-8 mt-1 h-[50px] w-[400px] rounded-2xl bg-tertiary-color">
+    <div className="flex h-[92vh] w-[100%] justify-between bg-primary-color p-2">
+      <div className=" w-[10%]">
+        <div
+          className={`flex h-[50px] cursor-pointer items-center rounded-tl-3xl ${
+            isGeneral
+              ? 'border-2 border-tertiary-color border-b-[#F03641]  bg-tertiary-color'
+              : 'bg-[#0D0D0D]'
+          } p-3`}
+          onClick={handleGeneral}
+        >
+          {isGeneral ? (
             <Image
-              src="/assets/icons/g2676.svg"
-              alt="@"
+              src="/assets/icons/settings.svg"
+              alt="settings"
               width={25}
               height={25}
-              className="absolute left-3 top-3"
             />
-            <div className="absolute left-11 top-1">
-              <p className="text-[12px] text-[#808080]">Username</p>
-              <p className="text-[16px] text-[#808080]">
-                4all.live/
-                <span className="text-font-color">
-                  <input
-                    type="text"
-                    className="border-none bg-tertiary-color outline-none"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
-                  />
-                </span>
-              </p>
-            </div>
-          </div>
-          <div className="relative mb-8 mt-1 h-[50px] w-[400px] rounded-2xl bg-tertiary-color">
+          ) : (
             <Image
-              src="/assets/icons/g439.svg"
-              alt="name"
+              src="/assets/icons/general.svg"
+              alt="settings"
               width={25}
               height={25}
-              className="absolute left-3 top-2"
             />
-            <div className="absolute left-11 top-1">
-              <p className="text-[12px] text-[#808080]">Your name</p>
-              <p className="text-[16px] text-font-color">
-                <input
-                  type="text"
-                  className="border-none bg-tertiary-color outline-none"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </p>
-            </div>
-          </div>
-          <div className="relative mb-8 mt-1 h-[50px] w-[400px] rounded-2xl bg-tertiary-color">
+          )}
+          <h3 className="ml-4 text-[16px] text-font-color">General</h3>
+        </div>
+        <div
+          className={`flex h-[50px] cursor-pointer items-center ${
+            isTeams
+              ? 'border-2 border-tertiary-color border-b-[#F03641]  bg-tertiary-color'
+              : 'bg-[#0D0D0D]'
+          } p-3`}
+          onClick={handleTeams}
+        >
+          {isTeams ? (
             <Image
-              src="/assets/icons/g2370.svg"
-              alt="@"
+              src="/assets/icons/Group 48095764.svg"
+              alt="teams"
               width={25}
               height={25}
-              className="absolute left-3 top-3"
             />
-            <div className="absolute left-11 top-1">
-              <p className="text-[12px] text-[#808080]">Email</p>
-              <p className="text-[16px] text-font-color">
-                <input
-                  type="text"
-                  className="border-none bg-tertiary-color outline-none"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <label className="relative cursor-pointer">
-              <Image
-                src="/assets/icons/avatar.svg"
-                alt="avatar"
-                width={96}
-                height={96}
-              />
-              <Image
-                src="/assets/icons/Group.svg"
-                alt="avatar"
-                width={25}
-                height={25}
-                className="absolute left-8 top-9"
-              />
-              <input type="file" style={{ display: 'none' }} accept="image/*" />
-            </label>
-            <p className="text-[16px] text-[#808080]">Avatar</p>
-          </div>
+          ) : (
+            <Image
+              src="/assets/icons/non-active-teams.svg"
+              alt="teams"
+              width={25}
+              height={25}
+            />
+          )}
+          <h3 className="ml-4 text-[16px] text-font-color">Teams</h3>
+        </div>
+        <div
+          className={`flex h-[50px] cursor-pointer items-center ${
+            isKeys
+              ? 'border-2 border-tertiary-color border-b-[#F03641]  bg-tertiary-color'
+              : 'bg-[#0D0D0D]'
+          } p-3`}
+          onClick={handleKeys}
+        >
+          {isKeys ? (
+            <Image
+              src="/assets/icons/active-keys.svg"
+              alt="keys"
+              width={25}
+              height={25}
+            />
+          ) : (
+            <Image
+              src="/assets/icons/non-active-keys.svg"
+              alt="keys"
+              width={25}
+              height={25}
+            />
+          )}
+          <h3 className="ml-4 text-[16px] text-font-color">API keys</h3>
+        </div>
+        <div
+          className={`flex h-[50px] cursor-pointer items-center rounded-bl-3xl ${
+            isNotifications
+              ? 'border-2 border-tertiary-color border-b-[#F03641]  bg-tertiary-color'
+              : 'bg-[#0D0D0D]'
+          } p-3`}
+          onClick={handleNotifications}
+        >
+          {isNotifications ? (
+            <Image
+              src="/assets/icons/active-notifications.svg"
+              alt="notification"
+              width={25}
+              height={25}
+            />
+          ) : (
+            <Image
+              src="/assets/icons/non-active-notifications.svg"
+              alt="notification"
+              width={25}
+              height={25}
+            />
+          )}
+          <h3 className="ml-4 text-[16px] text-font-color">Notification</h3>
         </div>
       </div>
+      {isGeneral && <General />}
+      {isTeams && <Teams />}
+      {isKeys && <APIKeys />}
+      {isNotifications && <Notifications />}
     </div>
   );
 };
